@@ -1,0 +1,918 @@
+
+/* =========================================
+   SEKOLMART - CSS LENGKAP
+   Marketplace Sekolah Tema Hijau MTsN
+========================================= */
+
+:root {
+  --green-dark: #14532d;
+  --green: #16803d;
+  --green-bright: #22a447;
+  --green-light: #eaf8ed;
+  --green-soft: #f4fbf5;
+  --white: #ffffff;
+  --text: #26352a;
+  --muted: #718075;
+  --border: #dce8df;
+  --shadow: 0 4px 14px rgba(24, 74, 39, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7f5;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* =========================================
+   HEADER - JUDUL, PENCARIAN, KERANJANG
+========================================= */
+
+header {
+  display: grid;
+  grid-template-columns: minmax(210px, 1fr) minmax(250px, 2fr) auto;
+  align-items: center;
+  gap: 24px;
+  padding: 19px 5%;
+  background: var(--green);
+  color: var(--white);
+  box-shadow: var(--shadow);
+}
+
+/* Judul besar SekolMart */
+.logo,
+header h1,
+header .logo {
+  color: var(--white);
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  white-space: nowrap;
+}
+
+.logo span,
+header h1 span {
+  color: #d5ffd9;
+}
+
+/* Pencarian berada di tengah */
+.search-box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 650px;
+  min-width: 0;
+  justify-self: center;
+  overflow: hidden;
+  background: var(--white);
+  border: 2px solid var(--white);
+  border-radius: 9px;
+  transition: box-shadow 0.2s ease;
+}
+
+.search-box:focus-within {
+  box-shadow: 0 0 0 4px rgba(218, 255, 224, 0.3);
+}
+
+.search-box input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  padding: 13px 16px;
+  color: var(--text);
+  background: var(--white);
+  border: none;
+  outline: none;
+}
+
+.search-box input::placeholder {
+  color: #8a968d;
+}
+
+.search-box button {
+  flex-shrink: 0;
+  padding: 0 19px;
+  align-self: stretch;
+  color: var(--green-dark);
+  background: #e1f6e5;
+  border: none;
+  font-weight: 800;
+}
+
+.search-box button:hover {
+  background: #c9edcf;
+}
+
+/* Keranjang tepat di samping pencarian */
+.cart-button,
+#cartCount {
+  color: var(--white);
+  font-weight: 700;
+}
+
+.cart-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 10px 15px;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 9px;
+}
+
+.cart-button:hover {
+  background: rgba(255, 255, 255, 0.23);
+}
+
+/* =========================================
+   NAVIGASI / JELAJAH
+========================================= */
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 13px 5%;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+
+nav a {
+  display: inline-block;
+  padding: 9px 17px;
+  color: #425348;
+  background: transparent;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--green-dark);
+  background: var(--green-light);
+}
+
+/* =========================================
+   AREA KONTEN
+========================================= */
+
+main,
+.container {
+  width: 90%;
+  max-width: 1250px;
+  margin: 26px auto;
+}
+
+section {
+  margin-bottom: 35px;
+}
+
+.section-title {
+  margin-bottom: 18px;
+  color: var(--green-dark);
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+/* =========================================
+   BANNER BERANDA
+========================================= */
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 230px;
+  padding: 35px 5%;
+  overflow: hidden;
+  color: var(--white);
+  background: linear-gradient(115deg, #126b32, #22a447);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+.banner-content {
+  max-width: 650px;
+}
+
+.banner h1,
+.banner h2 {
+  margin-bottom: 12px;
+  color: var(--white);
+  font-size: 34px;
+  line-height: 1.3;
+}
+
+.banner p {
+  margin-bottom: 20px;
+  color: #edfff0;
+}
+
+.banner button,
+.banner .button {
+  padding: 11px 22px;
+  color: var(--green-dark);
+  background: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-weight: 800;
+}
+
+/* =========================================
+   KATEGORI BARANG
+========================================= */
+
+.category-list,
+.categories {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.category-card,
+.category-item {
+  padding: 18px 8px;
+  color: var(--text);
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.category-card:hover,
+.category-item:hover,
+.category-card.active,
+.category-item.active {
+  color: var(--green-dark);
+  background: var(--green-light);
+  border-color: var(--green);
+}
+
+.category-card .icon,
+.category-item .icon {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 29px;
+}
+
+/* =========================================
+   PRODUK DI BERANDA
+   Kartu seperti marketplace Shopee
+========================================= */
+
+.product-grid,
+#productList {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 18px;
+  width: 100%;
+  margin: 18px 0 28px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  box-shadow: 0 3px 9px rgba(24, 74, 39, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  border-color: #a6d9b1;
+  box-shadow: 0 7px 18px rgba(24, 74, 39, 0.12);
+}
+
+/* Foto */
+.product-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 190px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: #edf7ef;
+  border-bottom: 1px solid #e6eee7;
+}
+
+.product-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.03);
+}
+
+.product-image .product-icon {
+  font-size: 60px;
+}
+
+/* Informasi barang */
+.product-info {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 1;
+  min-width: 0;
+  gap: 5px;
+  padding: 13px;
+  background: var(--white);
+}
+
+.product-name {
+  margin: 0 0 5px;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.product-category {
+  display: inline-block;
+  align-self: flex-start;
+  max-width: 100%;
+  margin-bottom: 6px;
+  padding: 3px 9px;
+  color: var(--green-dark);
+  background: var(--green-light);
+  border: 1px solid #d5edda;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* Harga */
+.product-price {
+  margin: 3px 0 5px;
+  color: var(--green);
+  font-size: 19px;
+  font-weight: 900;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+/* Kondisi dan penjual */
+.product-condition,
+.product-seller {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+/* Tombol produk */
+.product-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.product-actions button {
+  width: 100%;
+  min-width: 0;
+  padding: 10px 8px;
+  border: 1px solid var(--green);
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.buy-button,
+.btn-buy {
+  color: var(--white);
+  background: var(--green);
+}
+
+.buy-button:hover,
+.btn-buy:hover {
+  background: var(--green-dark);
+}
+
+.add-cart-button,
+.btn-cart {
+  color: var(--green);
+  background: var(--white);
+}
+
+.add-cart-button:hover,
+.btn-cart:hover {
+  background: var(--green-light);
+}
+
+.delete-button,
+.btn-delete {
+  color: #b42323;
+  background: #fff1f1;
+  border-color: #e7a5a5 !important;
+}
+
+/* Barang belum tersedia */
+.empty-message,
+.no-products {
+  grid-column: 1 / -1;
+  padding: 30px 18px;
+  color: var(--muted);
+  background: var(--white);
+  border: 1px dashed #b7d8be;
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* =========================================
+   FORM JUAL BARANG
+========================================= */
+
+.sell-section {
+  padding: 30px;
+  background: var(--white);
+  border: 1px solid #c9e6cf;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.sell-content {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.5fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.sell-text h2 {
+  margin-bottom: 12px;
+  color: var(--green-dark);
+  font-size: 30px;
+  line-height: 1.35;
+}
+
+.sell-text h2 span {
+  color: var(--green);
+}
+
+.sell-text p {
+  margin-bottom: 15px;
+  color: #56695b;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.sell-tip {
+  margin-top: 20px;
+  padding: 14px;
+  color: var(--green-dark);
+  background: #dff3e4;
+  border-left: 5px solid var(--green);
+  border-radius: 7px;
+}
+
+.sell-form {
+  width: 100%;
+  min-width: 0;
+  padding: 25px;
+  background: #e8f7eb;
+  border: 2px solid #83c995;
+  border-radius: 12px;
+}
+
+.sell-form h3 {
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  color: var(--green-dark);
+  border-bottom: 1px solid #c9e6cf;
+  font-size: 24px;
+}
+
+.sell-form form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 18px;
+  row-gap: 0;
+  align-items: start;
+}
+
+.sell-form label {
+  display: block;
+  margin: 12px 0 6px;
+  color: var(--green-dark);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.sell-form input,
+.sell-form select,
+.sell-form textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 13px;
+  color: #174b29;
+  background: #d5f0dc;
+  border: 1px solid #80bd8d;
+  border-radius: 8px;
+  outline: none;
+}
+
+.sell-form input:focus,
+.sell-form select:focus,
+.sell-form textarea:focus {
+  background: #f7fff8;
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(22, 128, 61, 0.13);
+}
+
+.sell-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.sell-form textarea,
+.sell-form input[type="file"],
+.sell-form #imagePreview,
+.sell-form .field-help,
+.sell-form .submit-button,
+.sell-form button[type="submit"] {
+  grid-column: 1 / -1;
+}
+
+.field-help {
+  display: block;
+  margin-top: 6px;
+  color: #52785b;
+  font-size: 13px;
+}
+
+#imagePreview {
+  max-width: 100%;
+  max-height: 220px;
+  margin-top: 12px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #d5f0dc;
+}
+
+.sell-form .submit-button,
+.sell-form button[type="submit"] {
+  width: 100%;
+  margin-top: 22px;
+  padding: 15px;
+  color: var(--white);
+  background: var(--green);
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.sell-form .submit-button:hover,
+.sell-form button[type="submit"]:hover {
+  background: var(--green-dark);
+}
+
+/* =========================================
+   KERANJANG
+========================================= */
+
+.cart-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(18, 39, 23, 0.55);
+}
+
+.cart-modal.show,
+.cart-modal.active {
+  display: flex;
+}
+
+.cart-content {
+  width: 100%;
+  max-width: 600px;
+  max-height: 85vh;
+  padding: 25px;
+  overflow-y: auto;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+}
+
+.cart-content h2 {
+  margin-bottom: 15px;
+  color: var(--green-dark);
+  font-size: 24px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.cart-item p {
+  color: var(--green);
+  font-weight: 800;
+}
+
+.cart-total {
+  margin-top: 18px;
+  color: var(--green-dark);
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.close-cart,
+.close-button {
+  margin-top: 15px;
+  padding: 9px 15px;
+  color: #314b37;
+  background: #edf2ee;
+  border: none;
+  border-radius: 7px;
+  font-weight: 700;
+}
+
+/* =========================================
+   INPUT UMUM
+========================================= */
+
+input,
+select,
+textarea {
+  font: inherit;
+  color: var(--text);
+  background: var(--white);
+  border: 1px solid #cbd9ce;
+  border-radius: 8px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(22, 128, 61, 0.12);
+}
+
+/* =========================================
+   NOTIFIKASI
+========================================= */
+
+.toast {
+  position: fixed;
+  bottom: 22px;
+  left: 50%;
+  z-index: 2000;
+  max-width: 90%;
+  padding: 13px 22px;
+  transform: translateX(-50%);
+  color: var(--white);
+  background: var(--green-dark);
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+  margin-top: 45px;
+  padding: 28px 5%;
+  color: var(--white);
+  background: var(--green-dark);
+  text-align: center;
+}
+
+footer p {
+  color: #e0f4e4;
+  font-size: 14px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  header {
+    grid-template-columns: 1fr auto;
+    gap: 14px;
+  }
+
+  .search-box {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    max-width: 100%;
+  }
+
+  .product-grid,
+  #productList {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .category-list,
+  .categories {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .sell-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   HP
+========================================= */
+
+@media (max-width: 600px) {
+  header {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+    padding: 15px 4%;
+  }
+
+  .logo,
+  header h1,
+  header .logo {
+    font-size: 25px;
+    letter-spacing: -0.5px;
+  }
+
+  .search-box {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+  }
+
+  .search-box input {
+    padding: 11px;
+  }
+
+  .search-box button {
+    padding: 0 12px;
+  }
+
+  nav {
+    justify-content: flex-start;
+    gap: 6px;
+    padding: 11px 4%;
+  }
+
+  nav a {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  main,
+  .container {
+    width: 92%;
+    margin: 20px auto;
+  }
+
+  .banner {
+    min-height: 200px;
+    padding: 24px 18px;
+  }
+
+  .banner h1,
+  .banner h2 {
+    font-size: 25px;
+  }
+
+  .section-title {
+    font-size: 21px;
+  }
+
+  .category-list,
+  .categories {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .category-card,
+  .category-item {
+    padding: 12px 5px;
+    font-size: 12px;
+  }
+
+  .product-grid,
+  #productList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .product-image {
+    height: 135px;
+  }
+
+  .product-info {
+    padding: 10px;
+    gap: 5px;
+  }
+
+  .product-name {
+    font-size: 14px;
+  }
+
+  .product-price {
+    font-size: 16px;
+  }
+
+  .product-actions button {
+    padding: 9px 5px;
+    font-size: 12px;
+  }
+
+  .sell-section {
+    padding: 17px;
+  }
+
+  .sell-text h2 {
+    font-size: 25px;
+  }
+
+  .sell-form {
+    padding: 16px;
+  }
+
+  .sell-form form {
+    grid-template-columns: 1fr;
+  }
+
+  .sell-form form > * {
+    grid-column: 1 / -1;
+  }
+
+  .cart-content {
+    padding: 18px;
+  }
+}
