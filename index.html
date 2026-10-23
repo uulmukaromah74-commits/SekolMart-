@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SekolMart | Marketplace Sekolah</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header" id="home">
+    <div class="header-top">
+      <a href="#home" class="logo">
+        <span>🛍️</span> Sekol<span class="logo-green">Mart</span>
+      </a>
+
+      <div class="search">
+        <input id="searchInput" type="search"
+          placeholder="Cari buku, seragam, tas, sepatu..."
+          oninput="searchProduct()">
+        <button type="button" onclick="searchProduct()">🔍</button>
+      </div>
+
+      <button class="cart-icon" type="button" onclick="openCart()">
+        🛒 Keranjang <span id="cartCount">0</span>
+      </button>
+    </div>
+
+    <nav class="navbar">
+      <a href="#home">Beranda</a>
+      <a href="#kategori">Kategori</a>
+      <a href="#produk">Produk</a>
+      <a href="#jual">Jual Barang</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="banner">
+      <div class="banner-content">
+        <p class="banner-small">♻️ KHUSUS WARGA SEKOLAH</p>
+        <h1>Barang Bekas,<br><span>Harga Bersahabat!</span></h1>
+        <p>Temukan barang sekolah yang masih bagus dan layak digunakan. Lebih hemat dan bermanfaat!</p>
+        <a href="#produk" class="banner-button">Belanja Sekarang →</a>
+      </div>
+      <div class="banner-image"></div>
+    </section>
+
+    <section class="section" id="kategori">
+      <div class="section-header">
+        <h2>Kategori</h2>
+        <a href="#produk">Lihat Semua →</a>
+      </div>
+
+      <div class="category-list">
+        <button class="category-card active" onclick="filterProduct('Semua',this)">
+          <span>🛍️</span><strong>Semua</strong>
+        </button>
+        <button class="category-card" onclick="filterProduct('Buku',this)">
+          <span>📚</span><strong>Buku</strong>
+        </button>
+        <button class="category-card" onclick="filterProduct('Seragam',this)">
+          <span>👕</span><strong>Seragam</strong>
+        </button>
+        <button class="category-card" onclick="filterProduct('Tas',this)">
+          <span>🎒</span><strong>Tas</strong>
+        </button>
+        <button class="category-card" onclick="filterProduct('Sepatu',this)">
+          <span>👟</span><strong>Sepatu</strong>
+        </button>
+        <button class="category-card" onclick="filterProduct('Alat Tulis',this)">
+          <span>✏️</span><strong>Alat Tulis</strong>
+        </button>
+      </div>
+    </section>
+
+    <section class="section" id="produk">
+      <div class="section-header product-title">
+        <div>
+          <p class="section-label">SEKOLMART</p>
+          <h2>Produk Terbaru</h2>
+        </div>
+        <span id="productResult">Barang tersedia</span>
+      </div>
+
+      <div class="product-grid" id="productList"></div>
+    </section>
+
+    <section class="sell-section" id="jual">
+      <div class="sell-wrapper">
+        <div class="sell-text">
+          <span class="banner-small">PUNYA BARANG YANG TIDAK TERPAKAI?</span>
+          <h2>Jual barangmu di <span>SekolMart!</span></h2>
+          <p>Barang yang masih layak digunakan bisa bermanfaat untuk siswa lainnya.</p>
+          <div class="sell-tip">
+            💡 <strong>Tips:</strong> Unggah foto asli dan jelaskan kondisi barang dengan jujur.
+          </div>
+        </div>
+
+        <form id="productForm" class="sell-form">
+          <h3>＋ Tambah Barang</h3>
+
+          <label for="productName">Nama Barang</label>
+          <input id="productName" type="text" placeholder="Contoh: Buku IPA Kelas 8" required>
+
+          <label for="productCategory">Kategori</label>
+          <select id="productCategory" required>
+            <option value="">Pilih kategori</option>
+            <option value="Buku">Buku</option>
+            <option value="Tas">Tas</option>
+            <option value="Seragam">Seragam</option>
+            <option value="Sepatu">Sepatu</option>
+            <option value="Alat Tulis">Alat Tulis</option>
+          </select>
+
+          <label for="productPrice">Harga yang Ditawarkan (Rp)</label>
+          <input id="productPrice" type="number" min="0" placeholder="Contoh: 15000" required>
+          <small class="field-help">Harga bisa dinegosiasikan dengan pembeli.</small>
+
+          <label for="productSeller">Nama Penjual</label>
+          <input id="productSeller" type="text" placeholder="Nama panggilan" required>
+
+          <label for="productWhatsapp">Nomor WhatsApp Penjual</label>
+          <input id="productWhatsapp" type="tel" placeholder="Contoh: 081234567890" required>
+
+          <label for="productCondition">Kondisi Barang</label>
+          <select id="productCondition" required>
+            <option value="">Pilih kondisi</option>
+            <option value="Sangat baik">Sangat baik</option>
+            <option value="Baik">Baik</option>
+            <option value="Cukup baik">Cukup baik</option>
+          </select>
+
+          <label for="productDescription">Keterangan Barang</label>
+          <textarea id="productDescription" rows="3" placeholder="Contoh: Buku masih lengkap, ada sedikit coretan."></textarea>
+
+          <label for="productImage">Foto Barang</label>
+          <input id="productImage" type="file" accept="image/*" required>
+          <small class="field-help">Gunakan foto barang asli. Maksimal 2 MB.</small>
+          <div id="imagePreview" class="image-preview" hidden></div>
+
+          <button class="submit-button" type="submit">＋ Jual Barang</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="notice">
+      <span>🤝</span>
+      <div>
+        <strong>Jual beli langsung dengan penjual</strong>
+        <p>Hubungi penjual melalui WhatsApp untuk menegosiasikan harga dan menentukan cara serah terima barang.</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="cartModal">
+    <div class="cart-box">
+      <button class="close" type="button" onclick="closeCart()">×</button>
+      <h2>🛒 Keranjang Saya</h2>
+      <p class="cart-subtitle">Barang yang kamu pilih</p>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-total">
+        <span>Total perkiraan</span>
+        <strong id="cartTotal">Rp0</strong>
+      </div>
+      <p class="cart-note">Harga akhir disepakati langsung dengan penjual.</p>
+      <button class="checkout" type="button" onclick="checkout()">Hubungi Penjual</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <h2>🛍️ SekolMart</h2>
+        <p>Marketplace barang sekolah yang masih layak digunakan.</p>
+      </div>
+      <div>
+        <h3>Navigasi</h3>
+        <a href="#home">Beranda</a>
+        <a href="#kategori">Kategori</a>
+        <a href="#produk">Produk</a>
+        <a href="#jual">Jual Barang</a>
+      </div>
+      <div>
+        <h3>SekolMart</h3>
+        <p>Barang Lama, Manfaat Baru! ♻️</p>
+      </div>
+    </div>
+    <div class="copyright">© 2026 SekolMart — Marketplace Sekolah</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
